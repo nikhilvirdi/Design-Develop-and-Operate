@@ -129,7 +129,7 @@ This results in:
 
 ---
 
-# Docker Architecture
+## Docker Architecture
 
 Docker uses a client-server architecture where different components work together to build, manage, and run containers.
 
@@ -148,9 +148,7 @@ The Docker Client and Docker Daemon can run on the same machine or on different 
 <img width="700" alt="docker-architecture" src="https://github.com/user-attachments/assets/90ab1d94-7dae-488e-ada4-1a345d326cf7" />
 
 
----
-
-## Docker Daemon
+### Docker Daemon
 
 The Docker Daemon (`dockerd`) is the background service responsible for managing Docker objects such as:
 
@@ -161,9 +159,7 @@ The Docker Daemon (`dockerd`) is the background service responsible for managing
 
 It listens for Docker API requests from the Docker Client and executes them. The daemon performs the heavy lifting of pulling images, creating containers, starting applications, and managing Docker services.
 
----
-
-## Docker Client
+### Docker Client
 
 The Docker Client (`docker`) is the primary interface users interact with. When a user runs commands like:
 
@@ -175,9 +171,8 @@ the client sends the request to the Docker Daemon, which then performs the opera
 
 The client communicates using the Docker API and can connect to both local and remote Docker daemons.
 
----
 
-## Docker Desktop
+### Docker Desktop
 
 Docker Desktop is a desktop application for Windows, macOS, and Linux that provides a complete Docker development environment.
 
@@ -191,9 +186,7 @@ Docker Desktop includes:
 
 It simplifies containerized application development by providing an easy-to-install local Docker environment.
 
----
-
-## Docker Registries
+### Docker Registries
 
 A Docker Registry is a storage and distribution system for Docker images. Images can be uploaded to registries and later downloaded whenever required.
 
@@ -210,13 +203,11 @@ Organizations can also create private registries to securely manage internal con
 
 ---
 
-# Docker Objects
+## Docker Objects
 
 Docker works using different objects such as images, containers, networks, and volumes.
 
----
-
-## Images
+### Images
 
 A Docker Image is a read-only template used to create containers. It contains the instructions, dependencies, libraries, and configurations required to run an application.
 
@@ -226,9 +217,7 @@ Images are typically created using a `Dockerfile`, which contains instructions d
 
 Each instruction creates a separate layer. Docker caches unchanged layers during rebuilds, making image creation fast and efficient.
 
----
-
-## Containers
+### Containers
 
 A container is a runnable instance of an image. Once an image is executed, it becomes a container.
 
@@ -244,9 +233,8 @@ Containers are isolated from each other and from the host system, although Docke
 
 By default, changes made inside a container are temporary unless persistent storage volumes are attached.
 
----
 
-## Example of `docker run`
+### Example of `docker run`
 
 ```bash id="rj8m1f"
 docker run -it ubuntu /bin/bash
@@ -267,7 +255,7 @@ When the shell exits, the container stops but still exists unless explicitly rem
 
 ---
 
-# Underlying Technology
+### Underlying Technology
 
 Docker is written in the Go programming language and uses several Linux kernel features to implement containers.
 
@@ -282,4 +270,3 @@ Docker creates separate namespaces for:
 * Hostnames
 
 This isolation allows containers to behave like independent systems while still sharing the same host operating system kernel.
-<img width="1233" height="651" alt="docker-architecture" src="https://github.com/user-attachments/assets/8bbb2d23-b36a-4566-8bcb-bf01759bd8f8" />
