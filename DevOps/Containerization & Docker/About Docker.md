@@ -58,7 +58,7 @@ Once testing is complete, the same container can be deployed directly into produ
 
 ---
 
-## Use Cases
+## What can I use Docker for?
 
 ### Fast and Consistent Application Delivery
 
@@ -76,7 +76,7 @@ Docker containers consume fewer resources compared to hypervisor-based Virtual M
 
 ---
 
-## Platform
+## The Docker platform
 
 Docker provides a platform for packaging, distributing, and running applications inside lightweight isolated environments called containers. Containers include everything required to run an application — the code, dependencies, libraries, runtime, and configuration files — ensuring applications behave consistently across development, testing, and production systems.
 
@@ -86,7 +86,7 @@ Docker also provides tools for managing the complete lifecycle of containers. De
 
 ---
 
-## Architecture
+## Docker architecture
 
 Docker uses a client-server architecture where different components work together to build, manage, and run containers. The Docker Client acts as the interface through which users interact with Docker. It communicates with the Docker Daemon, which performs the actual work of building images, creating containers, managing networks, and handling storage. Communication happens through the Docker API using UNIX sockets or network interfaces. The Docker Client and Docker Daemon can run on the same machine or on different remote systems.
 
