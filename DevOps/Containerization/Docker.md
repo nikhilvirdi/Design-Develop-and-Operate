@@ -105,7 +105,6 @@ Docker simplifies the software development lifecycle by allowing developers to w
 
 Containers integrate naturally with CI/CD pipelines because applications can be built, tested, validated, and deployed using the same environment throughout the entire workflow. Developers can write code locally, share containers with teammates, push them into testing environments, fix issues, rebuild images, and redeploy rapidly without changing infrastructure configurations.
 
----
 
 ### Responsive Deployment and Scaling
 
@@ -113,7 +112,6 @@ Docker containers are highly portable and can run across multiple environments, 
 
 Because containers are lightweight and start quickly, Docker also supports dynamic scaling. Applications and services can be scaled up or down in near real time depending on workload requirements.
 
----
 
 ### Better Hardware Utilization
 
