@@ -127,7 +127,7 @@ docker push myapp:v1
 
 ---
 
-## Objects
+## Docker Objects
 
 Docker works using different objects such as images, containers, networks, and volumes.
 
@@ -200,7 +200,7 @@ Registries can be public or private depending on organizational requirements.
 
 ---
 
-## Why Docker
+## Why Docker ?
 
 ### Eliminates Environment Inconsistency
 
