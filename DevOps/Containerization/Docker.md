@@ -87,7 +87,7 @@ Docker containers consume fewer resources compared to hypervisor-based Virtual M
 
 Due to their lightweight nature, containers start quickly, use less memory, and provide higher container density on servers. This makes Docker a cost-effective solution for high-density deployments and modern cloud-native infrastructure.
 
-# Docker Platform
+## Docker Platform
 
 Docker provides a platform for packaging, distributing, and running applications inside lightweight isolated environments called containers. Containers include everything required to run an application, such as the code, dependencies, libraries, runtime, and configuration files. Because of this, applications behave consistently across development, testing, and production systems.
 
