@@ -251,6 +251,102 @@ Because interactive flags (`-i` and `-t`) are used, the terminal attaches direct
 When the shell exits, the container stops but still exists unless explicitly removed.
 
 ---
+## Core Concepts
+
+### Image
+
+A Docker Image is a read-only template used to create containers. It contains everything required to run an application, including the application code, dependencies, libraries, runtime environment, configuration files, and system tools. Images act as blueprints from which containers are created.
+
+Images are usually built using a `Dockerfile`, where each instruction defines a step in the image creation process. Since images are immutable, they do not change once built. Instead, new versions of images are created whenever modifications are required.
+
+Docker images are portable and can be shared through registries, allowing the same application environment to run consistently across development, testing, and production systems.
+
+---
+
+### Container
+
+A container is a running instance of a Docker Image. When an image is executed using Docker, it becomes a container with its own isolated runtime environment.
+
+Containers provide process-level isolation while sharing the host operating system kernel. Each container has its own filesystem, network interfaces, processes, and configurations, making it behave like an independent system.
+
+Containers are lightweight and start quickly because they do not require a full guest operating system like Virtual Machines. Multiple containers can run simultaneously on the same machine with minimal resource overhead.
+
+Containers are also ephemeral by default, meaning changes inside a container are temporary unless persistent storage mechanisms such as volumes are used.
+
+---
+
+### Layer
+
+Docker Images are built using layers. Every instruction inside a `Dockerfile` creates a separate read-only layer. Examples include commands like:
+
+```dockerfile id="2pw4z7"
+RUN
+COPY
+ADD
+```
+
+Docker caches these layers during the build process. If only one layer changes, Docker rebuilds only that specific layer and reuses the unchanged cached layers. This significantly improves build speed and efficiency.
+
+Layers also reduce storage usage because multiple images can share common layers. For example, several Node.js application images may reuse the same Ubuntu base image layer instead of storing duplicate copies.
+
+This layered architecture is one of the main reasons Docker images are lightweight, efficient, and fast to distribute.
+
+---
+
+### Registry
+
+A Docker Registry is a storage and distribution system for Docker Images. Registries allow developers and organizations to upload, store, version, and share container images.
+
+Docker pulls images from registries whenever images are not available locally. Similarly, custom-built images can be pushed to registries for collaboration and deployment.
+
+Common Docker registries include:
+
+* Docker Hub
+* Amazon Elastic Container Registry
+* GitHub Container Registry
+
+Registries can be public or private depending on organizational requirements.
+
+---
+
+### Volume
+
+A Docker Volume is a persistent storage mechanism used to store data independently from containers. Normally, data inside a container is lost when the container is removed because containers are ephemeral.
+
+Volumes solve this problem by storing data outside the container filesystem while still allowing containers to access it.
+
+This is especially important for stateful services such as:
+
+* Databases
+* Redis caches
+* Uploaded files
+* Application logs
+
+Even if a container crashes, restarts, or gets deleted, the data stored inside volumes remains intact.
+
+Volumes also improve portability and make backup, migration, and data sharing between containers easier.
+
+---
+
+### Network
+
+Docker Networks enable communication between containers, host machines, and external systems. By default, containers are isolated, so networking is required for services to interact with each other.
+
+Docker automatically creates network interfaces and assigns IP addresses to containers. Containers connected to the same Docker network can communicate directly using container names instead of manually configuring IP addresses.
+
+Networking is essential in multi-container applications where services such as:
+
+* Backend APIs
+* Databases
+* Redis
+* Message brokers
+
+need to communicate securely and efficiently.
+
+Docker supports multiple networking modes such as bridge networks, host networks, and overlay networks depending on deployment requirements.
+
+---
+
 ## So Why Docker ?
 
 ### Eliminates "works on my machine" — container packages app + runtime + dependencies
