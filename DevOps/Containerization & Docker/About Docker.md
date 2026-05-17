@@ -10,7 +10,6 @@ Virtualization is a software technology that abstracts physical hardware to crea
 * Provides isolation between environments
 * Widely used in cloud computing and data centers
 
----
 
 ## Containerization
 
